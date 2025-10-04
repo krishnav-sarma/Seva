@@ -9,6 +9,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+
 /* Hide scrollbar but keep scrolling */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
@@ -22,4 +24,31 @@ body {
 .scroll-smooth-custom {
   scroll-behavior: smooth;
 }
+
+
+
+
+
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0%); opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(0%); opacity: 1; }
+  to { transform: translateY(100%); opacity: 0; }
+}
+
+.animate-slideUp {
+  animation: slideUp 220ms cubic-bezier(.22,.9,.3,1) forwards;
+}
+
+.animate-slideDown {
+  animation: slideDown 220ms cubic-bezier(.4,0,.2,1) forwards;
+}
+
+
+
+
+
 
