@@ -11,7 +11,7 @@ const Footer = () => {
 
   const tabs = [
     { name: "Home", path: "/", icon: Home },
-    { name: "Helpline", path: "/hospitals", icon: Phone },
+    { name: "Helpline", path: "/helpline", icon: Phone },
     { name: "Application", path: "/application", icon: FileText },
     { name: "Setting", path: "/Setting", icon: Settings },
   ];

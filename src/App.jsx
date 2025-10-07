@@ -4,11 +4,12 @@ import Header from "./components/Header";
 import MainContent from "./components/MainContent";
 import Settings from "./components/Settings";
 import Login from "./components/Login";
-import Footer from "./components/Footer"; // 👈 import your Footer
+import Footer from "./components/Footer";
 import NotFound from "./components/NotFound";
 import Profile from "./components/Profile";
-import Hospital from "./components/Hospital"; // adjust path if needed
-
+import Hospital from "./components/Hospital";
+import ViralIllness from "./components/ViralIllness";
+import Helpline from "./components/Helpline";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -35,7 +36,6 @@ function App() {
               <div>
                 <Footer />
               </div>
-              
             </div>
           ) : (
             <Navigate to="/login" replace />
@@ -50,23 +50,17 @@ function App() {
           user ? <Settings user={user} /> : <Navigate to="/login" replace />
         }
       />
-      <Route
-  path="/hospi"
-  element={<Hospital/>
-  }
-/>
+      <Route path="/hospi" element={<Hospital />} />
+      <Route path="/viral" element={<ViralIllness />} />
+      <Route path="/helpline" element={<Helpline />} />
 
-      
       <Route path="*" element={<NotFound />} />
-      <Route path="/profile"
-  element={
-    user ? (
-      <Profile user={user} />
-    ) : (
-      <Navigate to="/login" replace />
-    )
-  } />
-
+      <Route
+        path="/profile"
+        element={
+          user ? <Profile user={user} /> : <Navigate to="/login" replace />
+        }
+      />
     </Routes>
   );
 }
