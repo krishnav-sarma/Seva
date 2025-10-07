@@ -1,7 +1,7 @@
 // Footer.jsx
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Home, FileText, Settings, Hospital } from "lucide-react";
+import { Home, FileText, Settings, Hospital, Phone } from "lucide-react";
 import ChatWindow from "./ChatWindow";
 
 const Footer = () => {
@@ -11,7 +11,7 @@ const Footer = () => {
 
   const tabs = [
     { name: "Home", path: "/", icon: Home },
-    { name: "Hospitals", path: "/hospitals", icon: Hospital },
+    { name: "Helpline", path: "/hospitals", icon: Phone },
     { name: "Application", path: "/application", icon: FileText },
     { name: "Setting", path: "/Setting", icon: Settings },
   ];
@@ -19,7 +19,7 @@ const Footer = () => {
   return (
     <>
       {/* Footer Bar */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-inner flex justify-around items-center h-16 md:hidden z-40">
+      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-inner flex justify-around items-center h-15 md:hidden z-49">
         {tabs.slice(0, 2).map((tab) => {
           const isActive = location.pathname === tab.path;
           const Icon = tab.icon;
@@ -30,7 +30,7 @@ const Footer = () => {
               className="flex flex-col items-center justify-center focus:outline-none"
             >
               <Icon
-                size={24}
+                size={22}
                 className={isActive ? "text-[#236a68]" : "text-gray-400 hover:text-[#236a68]"}
               />
               <span className={`text-xs mt-1 ${isActive ? "text-[#236a68] font-semibold" : "text-[#236a68]"}`}>
@@ -43,7 +43,7 @@ const Footer = () => {
         {/* Floating Chatbot Button */}
         <button
           onClick={() => setShowChat(true)}
-          className="relative -top-6 bg-gradient-to-r from-[#236a68] to-[#4fc3c0] rounded-full p-3 shadow-lg"
+          className="relative -top-6 bg-[#236a68] rounded-full p-1 shadow-lg"
           aria-label="Open Health Assistant"
         >
           <img
