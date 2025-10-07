@@ -7,6 +7,8 @@ import Login from "./components/Login";
 import Footer from "./components/Footer"; // 👈 import your Footer
 import NotFound from "./components/NotFound";
 import Profile from "./components/Profile";
+import Hospital from "./components/Hospital"; // adjust path if needed
+
 
 function App() {
   const [user, setUser] = useState(null);
@@ -48,6 +50,13 @@ function App() {
           user ? <Settings user={user} /> : <Navigate to="/login" replace />
         }
       />
+      <Route
+  path="/hospi"
+  element={<Hospital/>
+  }
+/>
+
+      
       <Route path="*" element={<NotFound />} />
       <Route path="/profile"
   element={

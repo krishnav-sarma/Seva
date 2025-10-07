@@ -100,20 +100,26 @@ const ChatWindow = ({ open, onClose }) => {
         aria-modal="true"
       >
         {/* Top drag bar */}
-        <div className="flex justify-center pt-2 pb-1">
+        {/* <div className="flex justify-center pt-2 pb-1">
           <div
             onClick={onClose}
             className="w-12 h-1.5 bg-gray-300 rounded-full cursor-pointer hover:bg-gray-400 transition"
             title="Close chat"
           ></div>
-        </div>
+        </div> */}
 
         {/* Header */}
         <div className="relative flex items-center justify-center border-b shadow-sm h-12">
           <div className="text-sm font-medium text-gray-700">
             General Health and Questions
           </div>
-          
+          <button
+            onClick={onClose}
+            className="absolute right-3 text-gray-500 hover:text-gray-700 transition"
+            aria-label="Close chat"
+          >
+            ✖
+          </button>
         </div>
 
         {/* Chat messages */}
