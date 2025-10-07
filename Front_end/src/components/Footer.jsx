@@ -42,6 +42,15 @@ const Footer = () => {
 
         {/* Floating Chatbot Button */}
         <button
+          onClick={() =>
+            window.open("https://mrs0lver.github.io/SevaCHAT/", "_blank")
+          }
+          className="relative -top-6 bg-[#236a68] rounded-full p-1 shadow-lg"
+          aria-label="Open Health Assistant"
+        >
+          <img src="/bg.png" alt="Chatbot" className="w-10 h-10 rounded-full" />
+        </button>
+        {/* <button
           onClick={() => setShowChat(true)}
           className="relative -top-6 bg-[#236a68] rounded-full p-1 shadow-lg"
           aria-label="Open Health Assistant"
@@ -51,7 +60,7 @@ const Footer = () => {
             alt="Chatbot"
             className="w-10 h-10 rounded-full"
           />
-        </button>
+        </button> */}
 
         {tabs.slice(2).map((tab) => {
           const isActive = location.pathname === tab.path;
