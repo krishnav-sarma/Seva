@@ -48,7 +48,7 @@ const Footer = () => {
           className="relative -top-6 bg-[#236a68] rounded-full p-1 shadow-lg"
           aria-label="Open Health Assistant"
         >
-          <img src="/bg.png" alt="Chatbot" className="w-10 h-10 rounded-full" />
+          <img src="/icon.jpeg" alt="Chatbot" className="w-10 h-10 rounded-full" />
         </button>
         {/* <button
           onClick={() => setShowChat(true)}
