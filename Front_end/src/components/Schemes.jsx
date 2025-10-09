@@ -88,7 +88,7 @@ const Schemes = () => {
 
       <button
         onClick={() => navigate(-1)}
-        className="mt-4 w-full bg-green-600 text-white font-semibold py-2 rounded-lg hover:bg-green-700 transition"
+        className="mt-4 w-full bg-green-600 text-white font-semibold py-2 rounded-lg hover:bg-green-700 hover:scale-102 transition"
       >
         ← Back
       </button>

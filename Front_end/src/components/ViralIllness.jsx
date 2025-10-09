@@ -59,45 +59,53 @@ const ViralIllness = () => {
   ];
 
   return (
-    <div className="bg-white rounded-xl shadow-md p-4 w-full max-w-md">
-      {/* Header */}
-      <div className="flex items-center mb-4 gap-2">
-        <Lightbulb className="text-[#5ba2a0]" size={22} />
-        <h2 className="font-bold text-lg text-gray-800">Viral Illnesses</h2>
-      </div>
-      <p className="text-gray-500 text-sm mb-3">
-        Mentioned below are some recently reported viral illnesses in your area.
-      </p>
+    <div className="min-h-screen bg-[#f1f1f1] flex justify-center items-start p-4 sm:p-6">
+      <div className="bg-white rounded-2xl shadow-lg p-5 sm:p-6 w-full max-w-lg transition-all duration-300">
+        {/* Header */}
+        <div className="flex items-center mb-3 gap-2">
+          <Lightbulb className="text-[#236a68]" size={24} />
+          <h2 className="font-bold text-xl text-green-900">Viral Illnesses</h2>
+        </div>
 
+        <p className="text-gray-600 text-sm mb-5">
+          Mentioned below are some recently reported viral illnesses in your area.
+        </p>
 
-      {/* Illness List */}
-      <div className="space-y-2">
-        {illnessData.map((illness, i) => (
-          <div
-            key={i}
-            className="flex flex-col border border-gray-200 py-2 px-3 rounded-2xl bg-[#f7f7f7] hover:bg-[#ececec] transition"
-          >
-            <div className="flex items-center gap-2 mb-1">
-              <Pill className="text-[#236a68]" size={16} />
-              <span className="font-semibold text-gray-900">{illness.name}</span>
+        {/* Illness List */}
+        <div className="space-y-3">
+          {illnessData.map((illness, i) => (
+            <div
+              key={i}
+              className="flex flex-col border border-gray-200 py-3 px-4 rounded-xl bg-[#fafafa] hover:bg-[#ebf3f2] hover:shadow-md transition-all duration-200"
+            >
+              <div className="flex items-center gap-2 mb-1">
+                <Pill className="text-[#236a68]" size={18} />
+                <span className="font-semibold text-gray-900 text-sm sm:text-base">
+                  {illness.name}
+                </span>
+              </div>
+
+              <div className="flex items-start gap-2 text-gray-700 text-sm mt-1">
+                <Thermometer size={15} className="mt-0.5 text-[#236a68]" />
+                <span>{illness.symptoms}</span>
+              </div>
+
+              <div className="flex items-start gap-2 text-gray-700 text-sm mt-1">
+                <Activity size={15} className="mt-0.5 text-[#236a68]" />
+                <span>{illness.treatment}</span>
+              </div>
             </div>
-            <div className="flex items-start gap-1 text-gray-700 text-sm">
-              <Thermometer size={14} />
-              <span>{illness.symptoms}</span>
-            </div>
-            <div className="flex items-start gap-1 text-gray-700 text-sm">
-              <Activity size={14} />
-              <span>{illness.treatment}</span>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
+
+        {/* Back Button */}
+        <button
+          onClick={() => navigate(-1)}
+          className="mt-6 w-full bg-[#236a68] text-white font-semibold py-2.5 rounded-lg hover:bg-[#1d5654] hover:scale-102 transition-colors duration-200"
+        >
+          ← Back
+        </button>
       </div>
-      <button
-        onClick={() => navigate(-1)}
-        className="mt-4 w-full bg-[#236a68] text-white font-semibold py-2 rounded-lg hover:bg-green-700 transition"
-      >
-        ← Back
-      </button>
     </div>
   );
 };

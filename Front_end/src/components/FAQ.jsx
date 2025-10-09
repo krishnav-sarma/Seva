@@ -74,8 +74,8 @@ const FAQ = () => {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-md p-4 w-full max-w-md mx-auto">
-      <h2 className="text-lg font-bold text-gray-800 mb-4">
+    <div className="bg-white rounded-xl shadow-md p-4 sm:p-6 md:p-8 w-[95%] sm:w-[90%] md:w-[80%] lg:w-[60%] xl:w-[50%] mx-auto my-4">
+      <h2 className="text-base sm:text-lg md:text-xl font-bold text-gray-800 mb-4 text-center md:text-left">
         Frequently Asked Questions
       </h2>
 
@@ -87,9 +87,9 @@ const FAQ = () => {
           >
             <button
               onClick={() => toggleFAQ(index)}
-              className="flex justify-between items-center w-full p-3 bg-[#f7f7f7] hover:bg-[#ececec] transition"
+              className="flex justify-between items-center w-full p-3 sm:p-4 bg-[#f7f7f7] hover:bg-[#ececec] transition"
             >
-              <span className="flex-1 text-left text-gray-800 font-medium text-[13px]">
+              <span className="flex-1 text-left text-gray-800 font-medium text-[12px] sm:text-[13px] md:text-[14px]">
                 {faq.question}
               </span>
               {openIndex === index ? (
@@ -100,16 +100,17 @@ const FAQ = () => {
             </button>
 
             {openIndex === index && (
-              <div className="p-3 text-gray-700 text-sm bg-white">
+              <div className="p-3 sm:p-4 text-gray-700 text-[13px] sm:text-sm md:text-base bg-white">
                 {faq.answer}
               </div>
             )}
           </div>
         ))}
       </div>
+
       <button
         onClick={() => navigate(-1)}
-        className="mt-4 w-full bg-[#236a68] text-white font-semibold py-2 rounded-lg hover:bg-green-700 transition"
+        className="mt-5 w-full bg-[#236a68] text-white font-semibold py-2 sm:py-3 rounded-lg transition hover:scale-102 text-sm sm:text-base"
       >
         ← Back
       </button>

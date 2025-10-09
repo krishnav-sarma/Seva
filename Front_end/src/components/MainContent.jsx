@@ -80,7 +80,7 @@ const MainContent = () => {
 
         <button
           onClick={() => navigate("/hospi")}
-          className="mt-3 w-full border border-blue-200 text-[#236a68] font-bold py-2 rounded-lg hover:bg-red-50 transition"
+          className="mt-3 w-full border border-blue-200 text-[#236a68] font-bold py-2 rounded-lg hover:bg-blue-50 transition"
         >
           View Detailed Analysis
         </button>
